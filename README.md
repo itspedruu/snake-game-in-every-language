@@ -9,3 +9,4 @@ Snake Game In Every Language (SGIEL) is a repository with the intention to have 
 | Language             | Developer                                    |
 |----------------------|----------------------------------------------|
 | `Javascript + HTML5` | [Pedro Pinto](https://github.com/itspedruu)  |
+| `Python`             | [Pedro Pinto](https://github.com/itspedruu)  |
