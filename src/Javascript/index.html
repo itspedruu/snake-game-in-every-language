@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Snake Game In Every Language</title>
+		
+		<style>
+			#game {
+				border: 2px solid white;
+				padding: 1px;
+			}
+			
+			body {
+				background-color: #000;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="game" width="500" height="500">
+
+		<script src="js/Constants.js"></script>
+		<script src="js/Fruit.js"></script>
+		<script src="js/Snake.js"></script>
+		
+		<script>
+			const canvas = document.getElementById('game');
+			const GRID = [canvas.width / PIXEL_OFFSET - 1, canvas.height / PIXEL_OFFSET - 1];
+			const ctx = canvas.getContext('2d');
+			
+			let speed = [0, 0];
+
+			let snake = new Snake(ctx);
+			let fruit = new Fruit(ctx);
+			
+			// Tick Update
+			setInterval(gameUpdate, 1000 / TICKS);
+			
+			document.onkeydown = ({keyCode}) => {
+				if (keyCode == ARROW_RIGHT) {
+					speed = [1, 0];
+				}
+				
+				if (keyCode == ARROW_LEFT) {
+					speed = [-1, 0];
+				}
+				
+				if (keyCode == ARROW_DOWN) {
+					speed = [0, 1];
+				}
+				
+				if (keyCode == ARROW_UP) {
+					speed = [0, -1];
+				}
+			};
+			
+			function clearCanvas() {
+				ctx.clearRect(0, 0, canvas.height, canvas.width);
+			}
+			
+			function draw() {
+				if (status == 'lose' || status == 'win') {
+					ctx.font = '30px Comic Sans MS';
+					ctx.fillStyle = status == 'lose' ? 'red' : 'green';
+					ctx.textAlign = 'center';
+					
+					return ctx.fillText(status == 'lose' ? 'Game Over' : 'You won!', canvas.width/2, canvas.height/2);
+				}
+			
+				snake.draw();
+				fruit.draw();
+			}
+			
+			function gameUpdate() {
+				clearCanvas();
+				
+				snake.update();
+
+				draw();
+			}
+		</script>
+	</body>
+</html>
