@@ -1,0 +1,6 @@
+GRID = [25, 25]
+PIXEL_OFFSET = 20
+BLACK = 0, 0, 0
+GREEN = 0, 255, 0
+RED = 255, 0, 0
+TICKS = 10
