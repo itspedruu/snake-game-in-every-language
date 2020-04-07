@@ -1,4 +1,4 @@
-import sys, pygame, threading, time
+import sys, pygame, threading, time, random, math
 
 from Constants import *
 from Snake import Snake

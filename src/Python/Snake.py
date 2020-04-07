@@ -9,8 +9,10 @@ class Snake:
 		self.speed = [0, 0]
 
 	def draw(self):
-		for position in self.body:
-			pygame.draw.rect(self.surface, GREEN, pygame.Rect(position[0] * PIXEL_OFFSET, position[1] * PIXEL_OFFSET, PIXEL_OFFSET, PIXEL_OFFSET))
+		for index in range(0, len(self.body)):
+			position = self.body[index]
+			body = pygame.image.load(TEXTURES['BODY'] if index > 0 else TEXTURES['HEAD'])
+			self.surface.blit(body, (position[0] * PIXEL_OFFSET, position[1] * PIXEL_OFFSET))
 
 	def update(self):
 		currentPosition = self.body[0].copy()
@@ -61,4 +63,4 @@ class Snake:
 		return self.hasCollidedWith(self.body[1:])
 
 	def hasReachedMaxLength(self):
-		return len(self.body) == GRID[0] ** 2
+		return len(self.body) == GRID[0] * GRID[1]
