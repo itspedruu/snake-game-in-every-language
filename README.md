@@ -2,7 +2,7 @@
 
 # About
 
-Snake Game In Every Language (SGIEL) is a repository with the intention to have the snake game made in every language possible. If you want to contribute, please make a pull request.
+Snake Game In Every Language is a repository with the intention to have the snake game made in every language possible. If you want to contribute, please make a pull request.
 
 # Game Adaptations
 
