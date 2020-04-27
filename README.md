@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/itspedruu/snake-game-in-every-language/master/banner.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/itspedruu/snake-game-in-every-language/master/textures/banner.png"/></p>
 
 # About
 
